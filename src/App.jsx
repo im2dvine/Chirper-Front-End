@@ -132,14 +132,14 @@ const App = () => {
         <>
             <div id="main-container">
 
-                <div id="container">
+                <div id="chirp-container">
                     <input onChange={(e) => setUsername(e.target.value)} type="text" placeholder="username"></input>
 
                     <input onChange={(e) => setChirps(e.target.value)} type="text" placeholder="What To Chirp?"></input>
                     <button onClick={submitChirp}> Chirp It! </button>
                 </div>
 
-                <div className="chirps ">
+                <div className="chirps">
                     {chirpArr.map((chirp) => {
                         return (
                             <div>
@@ -147,7 +147,7 @@ const App = () => {
                                 <br></br><p>{chirp.message}</p>
                             </div>
                         )
-                    })};
+                    })}
                 </div>
 
             </div>
