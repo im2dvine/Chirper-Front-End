@@ -131,29 +131,31 @@ const App = () => {
     return (
         <>
             <div id="main-container">
-
-                <div id="chirp-container">
-                    <input onChange={(e) => setUsername(e.target.value)} type="text" placeholder="username"></input>
-
-                    <input onChange={(e) => setChirps(e.target.value)} type="text" placeholder="What To Chirp?"></input>
-                    <button onClick={submitChirp}> Chirp It! </button>
+                <div id="container">
+                    <div id="chirp-body display flex">
+                        <input onChange={(e) => setUsername(e.target.value)} type="text" placeholder="username"></input>
+                        <input onChange={(e) => setChirps(e.target.value)} type="text" placeholder="What To Chirp?"></input>
+                        <button onClick={submitChirp} className="btn-success"> Chirp It! </button>
+                    </div>
                 </div>
-
-                <div className="chirps">
+                <div className="container-body">
+                <div className="chirps card-body">
                     {chirpArr.map((chirp) => {
                         return (
-                            <div>
+                            <div className="border border-success rounded text-center">
                                 <h3>@{chirp.username}</h3>
-                                <br></br><p>{chirp.message}</p>
+                                <p>{chirp.message}</p>
                             </div>
                         )
                     })}
                 </div>
-
+                </div>
             </div>
         </>
     );
 };
+
+
 
 
 
